@@ -186,10 +186,10 @@ class BookCatalogApp(QWidget):
         book_id = self.book_table.item(selected_row, 0).text()
         current_status = self.book_table.item(selected_row, 5).text()  # Corrected column index
 
-        # Toggle the status
+        
         new_status = "Read" if current_status != "Read" else "Unread"
         update_book(book_id, self.book_table.item(selected_row, 1).text(), self.book_table.item(selected_row, 2).text(),
                     self.book_table.item(selected_row, 3).text(), self.book_table.item(selected_row, 4).text(),
                     self.book_table.item(selected_row, 6).text(), self.book_table.item(selected_row, 5).text(),  # Corrected
                     self.book_table.item(selected_row, 7).text(), new_status)  # Removed incorrect column access
-        self.load_books()  # Reload the list of books to reflect the status change
+        self.load_books()  
